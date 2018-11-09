@@ -1,8 +1,10 @@
 // Dependicies
 // ==================================================
 
-var waiting = require("waiting.js");
-var table = require("table.js");
+var waiting = require("./data/table");
+var table = require("./data/waiting");
+var path = require("path");
+//var app = require("./server");
 
 // Routes
 // ==================================================
@@ -38,7 +40,6 @@ module.exports = function(app) {
     
         return res.json(false);
     });
-};
 
 
 app.post("/api/tables", function(req, res) {
@@ -57,12 +58,17 @@ app.post("/api/clear", function() {
 
     table = [];
     waiting = [];
+
+    console.log(table);
+    console.log(waiting);
     
 });
+
+};
 
 // Starting Server
 // ==================================================
 
-app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-})
+// app.listen(PORT, function() {
+//     console.log("App listening on PORT " + PORT);
+// })

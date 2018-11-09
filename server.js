@@ -4,16 +4,19 @@ var path = require("path");
 
 var app = express();
 
+
+
 var PORT = process.env.PORT || 3000;
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
 
-require("./backend/routing/api.js")(app);
-require("./backend/route.js")(app);
+require("./hotRestaurantServer.js")(app);
+// require("./backend/route.js")(app);
 
 app.listen(PORT, function (){
     console.log("App listening on PORT: " + PORT);
 });
 
+//exports.hotRestaurants = whatever;
