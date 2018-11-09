@@ -1,8 +1,8 @@
 // Dependicies
 // ==================================================
 
-var waiting = require("waiting.js");
-var table = require("table.js");
+var waiting = require("/waiting.js");
+var table = require("/table.js");
 
 // Routes
 // ==================================================
@@ -57,7 +57,9 @@ app.post("/api/clear", function() {
 
     table = [];
     waiting = [];
-    
+
+    console.log(waiting);
+    console.log(table);
 });
 
 // Starting Server
